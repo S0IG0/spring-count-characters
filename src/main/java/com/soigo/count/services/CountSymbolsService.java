@@ -7,9 +7,17 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Сервис для подсчета количества вхождений символов в заданный массив символов и сортировки результатов.
+ */
 @Service
 public class CountSymbolsService {
-
+    /**
+     * Сортирует заданную хеш таблицу по убыванию значений.
+     *
+     * @param map Исходная карта, которую необходимо отсортировать.
+     * @return Отсортированная карта с сохранением порядка ключей.
+     */
     private @NotNull Map<Character, Integer> sortedMap(@NotNull Map<Character, Integer> map) {
         Map<Character, Integer> sortedCharacterCount = new LinkedHashMap<>();
         map.entrySet()
@@ -19,6 +27,12 @@ public class CountSymbolsService {
         return sortedCharacterCount;
     }
 
+    /**
+     * Подсчитывает количество вхождений каждого символа в заданный массив символов.
+     *
+     * @param characters Массив символов, для которых нужно подсчитать количество вхождений.
+     * @return Хеш таблица с символами в качестве ключей и количеством их вхождений в качестве значений.
+     */
     public Map<Character, Integer> count(char @NotNull [] characters) {
         Map<Character, Integer> characterCount = new HashMap<>();
         for (char character : characters) {

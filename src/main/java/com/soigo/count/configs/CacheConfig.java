@@ -10,11 +10,24 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 
 import java.time.Duration;
 
+/**
+ * Конфигурационный класс для настройки кеширования с использованием Redis.
+ */
 @Configuration
 @EnableCaching
 public class CacheConfig {
+    /**
+     * Продолжительность жизни кеша в минутах, считываемая из конфигурации.
+     */
     @Value("${redis.cache.minutes}")
     Integer lifetimeInMinutes;
+
+    /**
+     * Создает и настраивает менеджер Redis кеша.
+     *
+     * @param redisConnectionFactory Фабрика подключения к Redis.
+     * @return Менеджер Redis кеша с настройками продолжительности жизни.
+     */
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheConfiguration cacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
