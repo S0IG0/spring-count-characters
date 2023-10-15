@@ -11,7 +11,7 @@ import java.util.Map;
  * Сервис для подсчета количества вхождений символов в заданный массив символов и сортировки результатов.
  */
 @Service
-public class CountSymbolsService {
+public class CountCharactersService {
     /**
      * Сортирует заданную хеш таблицу по убыванию значений.
      *

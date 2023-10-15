@@ -5,15 +5,15 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Объект данных (DTO), представляющий строку символов для обработки.
  */
-public record SymbolsDto(
+public record CharactersDto(
         @ApiModelProperty(example = "aaaaabcccc")
         String symbols
 ) {
     /**
-     * Создает новый объект `SymbolsDto` с заданной строкой символов.
+     * Создает новый объект {@link CharactersDto} с заданной строкой символов.
      *
      * @param symbols Строка символов.
      */
-    public SymbolsDto {
+    public CharactersDto {
     }
 }
