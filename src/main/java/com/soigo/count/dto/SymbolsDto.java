@@ -1,9 +1,14 @@
 package com.soigo.count.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Объект данных (DTO), представляющий строку символов для обработки.
  */
-public record SymbolsDto(String symbols) {
+public record SymbolsDto(
+        @ApiModelProperty(example = "aaaaabcccc")
+        String symbols
+) {
     /**
      * Создает новый объект `SymbolsDto` с заданной строкой символов.
      *
